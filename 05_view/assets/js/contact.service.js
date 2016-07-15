@@ -25,14 +25,15 @@ function ContactService() {
 
     // 연락처 상세보기
     this.getContactByKey = function(id){
-        this.contactFromServer
-
+        console.log(this.contactFromServer.contacts[id]);
         return this.contactFromServer.contacts[id];
     };
 
     //연락처 등록
-    this.registContact = function () {
+    this.registContact = function (obj) {
+        console.log(obj);
 
+        this.contactFromServer.contacts.push(obj);
     };
 
     //연락처 삭제

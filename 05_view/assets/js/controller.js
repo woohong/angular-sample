@@ -77,7 +77,18 @@ angular.module('contactApp', ['ngRoute'])
      ------------------------------------*/
 
     .controller('addCtrl', function($scope, contactService){
-        $scope.contact = contactService.getAllContacts();
+
+        $scope.contactFormSubmitted = contactFormSubmitted;
+
+        console.log($scope.contact);
+        //$scope.contact = contactService.getAllContacts();
+
+        function contactFormSubmitted() {
+            console.log($scope.contact);
+
+            contactService.registContact($scope.contact);
+            $scope.contact = null;
+        }
     })
 
     /*-----------------------------------
